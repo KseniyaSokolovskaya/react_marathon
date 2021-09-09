@@ -1,6 +1,13 @@
 import classes from './index.module.css'
 const Layout = ({ title, descr, ulrBg, colorBg }) => (
-  <section className={classes.root} style={{ backgroundColor: colorBg ? colorBg : 'none' }}>
+  <section
+    className={classes.root}
+    style={{
+      backgroundColor: colorBg ? colorBg : 'none',
+      backgroundImage: ulrBg ? `url(${ulrBg})` : 'none',
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover',
+    }}>
     <div className={classes.wrapper}>
       <article>
         <div className={classes.title}>
@@ -9,9 +16,6 @@ const Layout = ({ title, descr, ulrBg, colorBg }) => (
         </div>
         <div className={`${classes.desc} ${classes.full}`} >
           <p>{descr}</p>
-        </div>
-        <div>
-          {ulrBg && <img src={ulrBg} alt={'img'} />}
         </div>
       </article>
     </div>
