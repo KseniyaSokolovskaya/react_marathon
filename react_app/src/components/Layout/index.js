@@ -1,5 +1,5 @@
 import classes from './index.module.css'
-const Layout = ({ title, descr, ulrBg, colorBg }) => (
+const Layout = ({ title, ulrBg, colorBg, children }) => (
   <section
     className={classes.root}
     style={{
@@ -15,7 +15,7 @@ const Layout = ({ title, descr, ulrBg, colorBg }) => (
           <span className={classes.separator}></span>
         </div>
         <div className={`${classes.desc} ${classes.full}`} >
-          <p>{descr}</p>
+          {children}
         </div>
       </article>
     </div>
